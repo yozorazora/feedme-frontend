@@ -97,8 +97,8 @@
               this.orders = res.data;
               this.error = null;
             } catch (err) {
-              console.error(err);
-              this.error = "Failed to load orders (backend可能在sleep)";
+              console.log("Retrying...");
+              setTimeout(this.loadOrder, 3000);
             }
           },
 
